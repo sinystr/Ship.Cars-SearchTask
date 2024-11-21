@@ -58,7 +58,7 @@ class Database: DatabaseProtocol {
         guard let result = try? context.fetch(request) else {
             return []
         }
-        return result.compactMap{$0.product}
+        return result.compactMap{Product(with: $0)}
     }
     
     func removeFavouriteProduct(forId id: Int16) {

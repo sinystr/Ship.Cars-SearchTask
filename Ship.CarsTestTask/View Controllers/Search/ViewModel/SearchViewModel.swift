@@ -45,7 +45,7 @@ final class SearchViewModel: SearchViewModelProtocol {
 
         currentTask = Task {
             do {
-                let products = try await searchService.search(searchText: productName)
+                let products = try await searchService.searchFor(text: productName)
                 self.searchState = .loaded(await productsService.getProductsFrom(productsInfo: products))
             } catch {
                 print("Error while fething products: \(error)")

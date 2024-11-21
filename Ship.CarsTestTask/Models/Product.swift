@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+/// Product model that is the main model of the application,
+/// represents a product with downloaded image
 final class Product: Hashable {
     let id: Int16
     let image: UIImage
@@ -30,6 +32,17 @@ final class Product: Hashable {
         self.isFavourite = isFavourite
         NotificationCenter.default.addObserver(self, selector: #selector(self.productFavouriteStateChanged(notification:)), name: .productFavouriteStateChanged, object: nil)
 
+    }
+    
+    convenience init?(with favouriteProduct: FavouriteProduct) {
+        guard let imageData = favouriteProduct.image,
+              let image = UIImage(data: imageData),
+              let productDescription = favouriteProduct.productDescription,
+              let title = favouriteProduct.title else {
+            return nil
+        }
+            
+        self.init(id: favouriteProduct.id, image: image, title: title, description: productDescription, isFavourite: true)
     }
     
     @objc func productFavouriteStateChanged(notification: Notification) {

@@ -7,14 +7,16 @@
 
 import Foundation
 
+/// Service class used to fetch search results in the of array of ``ProductResponse``
 final class SearchService: SearchServiceProtocol {
     static let searchURL: String = "https://dummyjson.com/products/search"
     
-    func search(searchText: String) async throws -> [ProductResponse] {
+    /// Async function that fetches the``ProductResponse`` array of results
+    func searchFor(text: String) async throws -> [ProductResponse] {
         var urlComponents = URLComponents(string: Self.searchURL)!
 
         let parameters: [String: String] = [
-            "q": searchText
+            "q": text
         ]
 
         urlComponents.queryItems = parameters.map { key, value in
