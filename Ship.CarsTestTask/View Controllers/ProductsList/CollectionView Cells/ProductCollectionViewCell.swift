@@ -15,6 +15,7 @@ class ProductCollectionViewCell: UICollectionViewCell
         didSet {
             descriptionTextView.textContainerInset = .zero
             descriptionTextView.textContainer.lineFragmentPadding = 0
+            descriptionTextView.isUserInteractionEnabled = false
         }
     }
     @IBOutlet private weak var favouriteButton: UIButton!

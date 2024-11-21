@@ -81,11 +81,11 @@ private extension ProductListViewController {
             let isLandscape = UIDevice.current.orientation.isLandscape
             let columns: CGFloat = isLandscape ? 3 : 1
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / columns),
-                                                  heightDimension: .estimated(isLandscape ? 250 : 300))
+                                                  heightDimension: .estimated(isLandscape ? 320 : 300))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                   heightDimension: .estimated(isLandscape ? 250 : 300))
+                                                   heightDimension: .estimated(isLandscape ? 320 : 300))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                            subitems: [item])
             let section = NSCollectionLayoutSection(group: group)
