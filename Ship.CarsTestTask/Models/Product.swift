@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class Product: Hashable {
+final class Product: Hashable {
     let id: Int16
     let image: UIImage
     let title: String

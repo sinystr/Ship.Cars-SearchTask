@@ -31,10 +31,7 @@ class ProductListViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.productCellReuseIdentifier)
-        collectionView.dataSource = dataSource
-        collectionView.collectionViewLayout = makeLayout()
-        collectionView.delegate = self
+        configureCollectionView()
     }
 
     required init?(coder: NSCoder) {
@@ -91,5 +88,12 @@ private extension ProductListViewController {
             let section = NSCollectionLayoutSection(group: group)
             return section
         }
+    }
+    
+    func configureCollectionView() {
+        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.productCellReuseIdentifier)
+        collectionView.dataSource = dataSource
+        collectionView.collectionViewLayout = makeLayout()
+        collectionView.delegate = self
     }
 }

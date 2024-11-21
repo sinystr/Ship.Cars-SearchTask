@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductCollectionViewCellViewModel {
+final class ProductCollectionViewCellViewModel {
     let product: Product
     
     init(product: Product) {

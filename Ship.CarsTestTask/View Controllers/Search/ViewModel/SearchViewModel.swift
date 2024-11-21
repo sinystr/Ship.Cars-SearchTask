@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-class SearchViewModel: SearchViewModelProtocol {
+final class SearchViewModel: SearchViewModelProtocol {
     private let coordinator: SearchCoordinator
     private(set) var searchState: SearchState = .idle
     {

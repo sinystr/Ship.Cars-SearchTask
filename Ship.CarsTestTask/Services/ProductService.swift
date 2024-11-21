@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ProductService: ProductsServiceProtocol {
+
+/// Service class used to convert ``ProductResponse`` to ``Product``
+final class ProductService: ProductsServiceProtocol {
+    static let requestCanceledCode: Int16 = -999
     let database: DatabaseProtocol
     
     init(database: DatabaseProtocol) {
         self.database = database
     }
     
+    /// Async function that converts ``ProductResponse`` to ``Product``, fetching each thumbnail from ``ProductResponse``
     func getProductsFrom(productsInfo: [ProductResponse]) async -> [Product] {
         do {
             return try await withThrowingTaskGroup(of: Product.self) { group in
@@ -42,8 +46,7 @@ class ProductService: ProductsServiceProtocol {
                 return returnProducts
             }
         } catch {
-            let requestCanceledCode: Int16 = -999
-            guard error._code != requestCanceledCode else {
+            guard error._code != Self.requestCanceledCode else {
                 return []
             }
             print(error)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavouritesViewController: ProductListViewController {
+final class FavouritesViewController: ProductListViewController {
     static let title = "Favourites"
     
     override func viewDidLoad() {

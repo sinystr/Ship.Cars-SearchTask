@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+final class SearchViewController: UIViewController, UISearchBarDelegate {
     static private let waitBeforeSearchTime: TimeInterval = 0.7
     
     // Views
