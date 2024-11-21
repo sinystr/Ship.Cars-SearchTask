@@ -12,7 +12,7 @@ final class SearchService: SearchServiceProtocol {
     static let searchURL: String = "https://dummyjson.com/products/search"
     
     /// Async function that fetches the``ProductResponse`` array of results
-    func searchFor(text: String) async throws -> [ProductResponse] {
+    func search(for text: String) async throws -> [ProductResponse] {
         var urlComponents = URLComponents(string: Self.searchURL)!
 
         let parameters: [String: String] = [

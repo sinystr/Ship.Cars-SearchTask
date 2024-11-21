@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SearchServiceProtocol {
-    func searchFor(text: String) async throws -> [ProductResponse]
+    func search(for text: String) async throws -> [ProductResponse]
 }
