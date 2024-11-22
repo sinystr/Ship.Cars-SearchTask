@@ -5,8 +5,8 @@
 //  Created by Georgi Georgiev on 14.11.24.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 /// Product model that is the main model of the application,
 /// represents a product with downloaded image
@@ -46,7 +46,8 @@ final class Product: Hashable {
     }
     
     @objc func productFavouriteStateChanged(notification: Notification) {
-        guard let product = notification.getAttachedProduct(), product.id == self.id else {
+        guard let product = notification.getAttachedProduct(),
+              product.id == self.id else {
             return
         }
         self.isFavourite = product.isFavourite
@@ -62,8 +63,9 @@ final class Product: Hashable {
         return favouriteProduct
     }
     
-    static func ==(lhs: Product, rhs: Product) -> Bool {
-            return lhs.id == rhs.id
+
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
