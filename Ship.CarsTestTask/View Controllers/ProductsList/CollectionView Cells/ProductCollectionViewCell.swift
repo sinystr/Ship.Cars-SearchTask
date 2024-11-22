@@ -24,6 +24,8 @@ final class ProductCollectionViewCell: UICollectionViewCell {
             guard let viewModel = viewModel else {
                 return
             }
+            
+            viewModel.product.favouriteStateChangedObserver = setFavouriteButtonIcon
 
             imageView.image = viewModel.product.image
             titleLabel.text = viewModel.product.title
@@ -31,12 +33,7 @@ final class ProductCollectionViewCell: UICollectionViewCell {
             setFavouriteButtonIcon()
         }
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.productFavouriteStateChanged(notification:)), name: .productFavouriteStateChanged, object: nil)
-    }
-    
+
     func configure(viewModel: ProductCollectionViewCellViewModel) {
         self.viewModel = viewModel
     }
@@ -46,13 +43,6 @@ final class ProductCollectionViewCell: UICollectionViewCell {
             return
         }
         viewModel.product.isFavourite = !viewModel.product.isFavourite
-    }
-    
-    @objc func productFavouriteStateChanged(notification: Notification) {
-        guard let product = notification.getAttachedProduct(), product.id == self.viewModel?.product.id else {
-            return
-        }
-        setFavouriteButtonIcon()
     }
 }
 

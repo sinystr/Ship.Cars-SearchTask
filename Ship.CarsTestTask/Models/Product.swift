@@ -20,9 +20,12 @@ final class Product: Hashable {
             if oldValue != isFavourite {
                 let userInfo = ["product": self]
                 NotificationCenter.default.post(name: .productFavouriteStateChanged, object: nil, userInfo: userInfo)
+                favouriteStateChangedObserver?()
             }
         }
     }
+
+    var favouriteStateChangedObserver: (() -> Void)?
     
     init(id: Int16, image: UIImage, title: String, description: String, isFavourite: Bool) {
         self.id = id
