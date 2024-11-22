@@ -54,8 +54,6 @@ private extension ProductListViewController {
             collectionView: collectionView,
             cellProvider: { (collectionView, indexPath, item) ->
                 UICollectionViewCell? in
-
-                // 4 display the date in the UI
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: Self.productCellReuseIdentifier,
                     for: indexPath) as? ProductCollectionViewCell
