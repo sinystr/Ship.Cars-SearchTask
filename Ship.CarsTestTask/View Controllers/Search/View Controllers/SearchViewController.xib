@@ -39,12 +39,11 @@
                         <outlet property="delegate" destination="-1" id="X0w-oC-3XN"/>
                     </connections>
                 </searchBar>
-                <view hidden="YES" contentMode="scaleToFill" id="A0a-r5-hCh" userLabel="Loading View">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0a-r5-hCh" userLabel="Loading View">
+                    <rect key="frame" x="0.0" y="115" width="393" height="737"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-5B-ajW">
-                            <rect key="frame" x="186.66666666666666" y="428.66666666666669" width="20" height="20"/>
+                            <rect key="frame" x="186.66666666666666" y="341.66666666666669" width="20" height="20"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </activityIndicatorView>
@@ -60,10 +59,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="A0a-r5-hCh" firstAttribute="trailing" secondItem="Scb-Ot-Sii" secondAttribute="trailing" id="CUC-RP-ZVr"/>
+                <constraint firstItem="A0a-r5-hCh" firstAttribute="bottom" secondItem="Scb-Ot-Sii" secondAttribute="bottom" id="DIP-h8-2HM"/>
                 <constraint firstItem="Scb-Ot-Sii" firstAttribute="top" secondItem="GDR-Ia-J1V" secondAttribute="bottom" id="GSb-tv-ANg"/>
                 <constraint firstItem="GDR-Ia-J1V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HU1-TD-Gqk"/>
+                <constraint firstItem="A0a-r5-hCh" firstAttribute="top" secondItem="Scb-Ot-Sii" secondAttribute="top" id="PfK-D6-vYQ"/>
                 <constraint firstItem="GDR-Ia-J1V" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="TYR-8i-zrv"/>
                 <constraint firstItem="Scb-Ot-Sii" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="eO5-N1-X0M"/>
+                <constraint firstItem="A0a-r5-hCh" firstAttribute="leading" secondItem="Scb-Ot-Sii" secondAttribute="leading" id="hQM-R2-KCw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GDR-Ia-J1V" secondAttribute="trailing" id="mOj-aE-sSo"/>
                 <constraint firstItem="Scb-Ot-Sii" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="tjG-nc-0gd"/>
                 <constraint firstItem="Scb-Ot-Sii" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yWn-KH-EjX"/>
@@ -76,7 +79,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
